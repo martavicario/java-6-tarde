@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Formulario Web</title>
+</head>
+<body>
+    <fieldset>
+    <legend><strong>Información personal:</strong></legend>
+        <label for="nombre">Nombre:</label><br>
+        <input type="text" id="nombre" name="nombre" required><br><br>
+    
+        <label for="apellidos">Apellidos:</label><br>
+        <input type="text" id="apellidos" name="apellidos" required><br><br>
+        
+        <label for="fecha de nacimiento">Fecha de nacimiento:</label><br>
+        <input type="date" id="fecha de nacimiento" name="fecha de nacimiento" required><br><br>
+
+        <label for="genero">Genero:</label><br>
+        <select type="text" id="genero" name="genero" required size="3"><br><br>
+            <option value="masculino">Masculino</option>
+            <option value="femenino">Femenino</option>
+            <option value="otro">Otro</option>
+        </select><br><br>
+    </fieldset>
+    <br>
+
+    <fieldset>
+    <legend><strong>Información de contacto:</strong></legend>
+        <label for="email">Email:</label><br>
+        <input type="text" id="email" name="email" required><br><br>
+    
+        <label for="telefono">Número de teléfono:</label><br>
+        <input type="number" id="telefono" name="telefono" required><br><br>
+    
+        <label for="direccion">Dirección:</label><br>
+        <input type="text" id="direccion" name="direccion" required><br><br>
+    </fieldset>
+    <br>
+
+    <fieldset>
+        <legend><strong>Información de la cuenta:</strong></legend>
+
+        <label for="nombre usuario">Nombre de usuario:</label><br>
+        <input type="text" id="nombre usuario" name="nombre usuario" required><br><br>
+    
+        <label for="contraseña">Contraseña:</label><br>
+        <input type="password" id="contraseña" name="contraseña" minlength="8"maxlength="20"required 
+                pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,20}$"
+                title="Debe tener entre 8 y 20 caracteres, incluyendo al menos una minúscula, una mayúscula, un número y un carácter especial (@$!%*#?&)."><br><br>
+
+        <label for="confirmacion contraseña">Confirmación contraseña:</label><br>
+        <input type="password" id="contraseña" name="contraseña" required
+        pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,20}$">
+    
+    </fieldset>
+    <br>
+    
+    <fieldset>
+    
+        <legend><strong>Preferencias:</strong></legend>
+        
+        <label for="colorfavorito">Seleccionar un Color Favorito:</label>
+        <select id="colorfavorito" name="colorfavorito">
+            <option value="rojo">Rojo</option>
+            <option value="azul">Azul</option>
+            <option value="verde">Verde</option>
+            <option value="amarillo">Amarillo</option>
+        </select>
+        <br><br>
+        
+        <input type="checkbox" id="aceptar" name="aceptar" required>
+        <label for="aceptar">Aceptar Términos y Condiciones</label>
+    </fieldset>
+    <br>
+    <button type="submit" requiered>Enviar</button>
+    </body>
+    </html>

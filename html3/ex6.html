@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Cita médica</title>
+</head>
+<body>
+    <h1>Cita médica</h1>
+    <form>
+        <label for="consulta">Tipo de consulta:</label><br>
+        <label><input type="checkbox" name="consulta" value="general"> General</label><br>
+        <label><input type="checkbox" name="consulta" value="especialidad"> Especialidad</label><br>
+        <label><input type="checkbox" name="consulta" value="urgencias"> Urgencias</label><br><br>
+
+        <label for="fecha">Fecha y hora:</label><br>
+        <input type="datetime-local" id="fecha" name="fecha"><br><br>
+
+        <label for="síntomas">Síntomas</label><br>
+        <input type="textarea"><br><br>
+
+        <label for="documentos">Documentos médicos:</label><br>
+        <input type="file" id="documentos" name="documentos"><br><br>
+
+        <label for="medico">Médico</label><br>
+        <select id="medico" name="medico">
+        <option value="medico1">Francisco Garcia</option>
+        <option value="medico2">Antonia Romero</option>
+        <option value="medico3">Jose Lopez</option></select><br><br>
+
+    <button type="submit">Enviar</button>
+
+    </form>
+  </body>
+  </html>
