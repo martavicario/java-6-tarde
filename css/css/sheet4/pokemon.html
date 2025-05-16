@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pokemon</title>
+    <style>
+      body {
+        font-family: sans-serif;
+        background-color: #fdec00;
+        margin: 0;
+      }
+
+      .contenedor-busqueda {
+        width: 80%;
+        max-width: 800px;
+        margin: 25px auto;
+        padding: 10px;
+        background-color: rgb(248, 249, 237);
+        text-align: center;
+        font-size: 16px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        border: none;
+      }
+
+      .primera-fila {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 20px;
+        margin: auto;
+        width: 80%;
+      }
+
+      .todas-las-cartas {
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        max-width: 1200px;
+        margin: 0 10;
+      }
+
+      article {
+        background-color: #fff;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
+      }
+
+      .pokemon-id {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        background-color: rgba(0, 0, 0, 0.1);
+        color: #5e4b32;
+        font-size: 12px;
+        padding: 3px 8px;
+        font-weight: bold;
+      }
+
+      .imagen-contenedor {
+        background-color: #e3e1e1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px 50px;
+        position: relative;
+      }
+
+      .imagen-contenedor img {
+        width: 80px;
+        height: auto;
+      }
+
+      .contenido {
+        padding: 10px 0;
+        padding-left: 20px;
+        text-align: left;
+        flex-grow: 1;
+      }
+
+      .contenido h3 {
+        margin: 5px 0 0;
+      }
+
+      .contenido p {
+        font-size: 12px;
+        color: #8a6767;
+        border: 1px solid #8a6767;
+        padding: 5px;
+        border-radius: 5px;
+        display: inline-block;
+        margin: 0 3px 0 0;
+      }
+
+      .evolucion {
+        display: flex;
+        flex-direction: column;
+        border-left: 4px solid #8a6767;
+        padding-left: 8px;
+        margin: 4px 0 10px 20px;
+      }
+
+      .etiqueta {
+        color: #8a6767;
+        font-size: 12px;
+        margin: 0;
+      }
+
+      .nombre-evolucion {
+        font-size: 18px;
+        color: #000;
+        margin: 0;
+        text-transform: lowercase;
+        font-weight: 400;
+      }
+
+      .triangulo-izquierdo {
+        width: 0;
+        height: 0;
+        border-top: 50px solid black;
+        border-right: 50px solid transparent;
+        position: fixed;
+        top: 0;
+        left: 0;
+      }
+
+      .triangulo-derecho {
+        width: 0;
+        height: 0;
+        border-top: 50px solid black;
+        border-left: 50px solid transparent;
+        position: fixed;
+        top: 0;
+        right: 0;
+      }
+
+      .circulo-izquierdo,
+      .circulo-derecho {
+        position: fixed;
+        bottom: 0;
+        width: 100px;
+        height: 100px;
+        background-color: red;
+        border-radius: 50%;
+        z-index: 10;
+      }
+
+      .circulo-izquierdo {
+        left: 0;
+        transform: translate(-50%, 50%);
+      }
+
+      .circulo-derecho {
+        right: 0;
+        transform: translate(50%, 50%);
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="primera-fila">
+      <input
+        type="text"
+        class="contenedor-busqueda"
+        placeholder="Filtra pokemons por nombre..."
+      />
+
+      <div class="todas-las-cartas">
+        <article>
+          <div class="imagen-contenedor">
+            <div class="pokemon-id">ID / 1</div>
+            <img src="1.png" alt="Bulbasaur" />
+          </div>
+          <div class="contenido">
+            <h3>Bulbasaur</h3>
+            <p>POISON</p>
+            <p>GRASS</p>
+          </div>
+        </article>
+
+        <article>
+          <div class="imagen-contenedor">
+            <div class="pokemon-id">ID / 2</div>
+            <img src="2.png" alt="Ivysaur" />
+          </div>
+          <div class="contenido">
+            <h3>Ivysaur</h3>
+            <p>POISON</p>
+            <p>GRASS</p>
+          </div>
+          <div class="evolucion">
+            <p class="etiqueta">Evoluciona de:</p>
+            <p class="nombre-evolucion">bulbasaur</p>
+          </div>
+        </article>
+
+        <article>
+          <div class="imagen-contenedor">
+            <div class="pokemon-id">ID / 3</div>
+            <img src="3.png" alt="Venusaur" />
+          </div>
+          <div class="contenido">
+            <h3>Venusaur</h3>
+            <p>POISON</p>
+            <p>GRASS</p>
+          </div>
+          <div class="evolucion">
+            <p class="etiqueta">Evoluciona de:</p>
+            <p class="nombre-evolucion">ivysaur</p>
+          </div>
+        </article>
+
+        <article>
+          <div class="imagen-contenedor">
+            <div class="pokemon-id">ID / 4</div>
+            <img src="4.png" alt="Charmander" />
+          </div>
+          <div class="contenido">
+            <h3>Charmander</h3>
+            <p>FIRE</p>
+          </div>
+        </article>
+
+        <article>
+          <div class="imagen-contenedor">
+            <div class="pokemon-id">ID / 5</div>
+            <img src="5.png" alt="Charmeleon" />
+          </div>
+          <div class="contenido">
+            <h3>Charmeleon</h3>
+            <p>FIRE</p>
+          </div>
+          <div class="evolucion">
+            <p class="etiqueta">Evoluciona de:</p>
+            <p class="nombre-evolucion">charmander</p>
+          </div>
+        </article>
+
+        <article>
+          <div class="imagen-contenedor">
+            <div class="pokemon-id">ID / 6</div>
+            <img src="6.png" alt="Charizard" />
+          </div>
+          <div class="contenido">
+            <h3>Charizard</h3>
+            <p>FIRE</p>
+            <p>FLYING</p>
+          </div>
+          <div class="evolucion">
+            <p class="etiqueta">Evoluciona de:</p>
+            <p class="nombre-evolucion">charmeleon</p>
+          </div>
+        </article>
+
+        <article>
+          <div class="imagen-contenedor">
+            <div class="pokemon-id">ID / 7</div>
+            <img src="7.png" alt="Squirtle" />
+          </div>
+          <div class="contenido">
+            <h3>Squirtle</h3>
+            <p>WATER</p>
+          </div>
+        </article>
+
+        <article>
+          <div class="imagen-contenedor">
+            <div class="pokemon-id">ID / 8</div>
+            <img src="8.png" alt="Wartortle" />
+          </div>
+          <div class="contenido">
+            <h3>Wartortle</h3>
+            <p>WATER</p>
+          </div>
+          <div class="evolucion">
+            <p class="etiqueta">Evoluciona de:</p>
+            <p class="nombre-evolucion">squirtle</p>
+          </div>
+        </article>
+
+        <article>
+          <div class="imagen-contenedor">
+            <div class="pokemon-id">ID / 9</div>
+            <img src="9.png" alt="Blastoise" />
+          </div>
+          <div class="contenido">
+            <h3>Blastoise</h3>
+            <p>WATER</p>
+          </div>
+          <div class="evolucion">
+            <p class="etiqueta">Evoluciona de:</p>
+            <p class="nombre-evolucion">wartortle</p>
+          </div>
+        </article>
+
+        <article>
+          <div class="imagen-contenedor">
+            <div class="pokemon-id">ID / 10</div>
+            <img src="10.png" alt="Caterpie" />
+          </div>
+          <div class="contenido">
+            <h3>Caterpie</h3>
+            <p>BUG</p>
+          </div>
+        </article>
+
+        <article>
+          <div class="imagen-contenedor">
+            <div class="pokemon-id">ID / 11</div>
+            <img src="11.png" alt="Metapod" />
+          </div>
+          <div class="contenido">
+            <h3>Metapod</h3>
+            <p>BUG</p>
+          </div>
+          <div class="evolucion">
+            <p class="etiqueta">Evoluciona de:</p>
+            <p class="nombre-evolucion">caterpie</p>
+          </div>
+        </article>
+
+        <article>
+          <div class="imagen-contenedor">
+            <div class="pokemon-id">ID / 12</div>
+            <img src="12.png" alt="Butterfree" />
+          </div>
+          <div class="contenido">
+            <h3>Butterfree</h3>
+            <p>BUG</p>
+            <p>FLYING</p>
+          </div>
+          <div class="evolucion">
+            <p class="etiqueta">Evoluciona de:</p>
+            <p class="nombre-evolucion">metapod</p>
+          </div>
+        </article>
+
+        <article>
+          <div class="imagen-contenedor">
+            <div class="pokemon-id">ID / 13</div>
+            <img src="13.png" alt="Weedle" />
+          </div>
+          <div class="contenido">
+            <h3>Weedle</h3>
+            <p>BUG</p>
+            <p>POISON</p>
+          </div>
+        </article>
+
+        <article>
+          <div class="imagen-contenedor">
+            <div class="pokemon-id">ID / 14</div>
+            <img src="14.png" alt="Kakuna" />
+          </div>
+          <div class="contenido">
+            <h3>Kakuna</h3>
+            <p>BUG</p>
+            <p>POISON</p>
+          </div>
+          <div class="evolucion">
+            <p class="etiqueta">Evoluciona de:</p>
+            <p class="nombre-evolucion">weedle</p>
+          </div>
+        </article>
+
+        <article>
+          <div class="imagen-contenedor">
+            <div class="pokemon-id">ID / 15</div>
+            <img src="15.png" alt="Beedrill" />
+          </div>
+          <div class="contenido">
+            <h3>Beedrill</h3>
+            <p>BUG</p>
+            <p>POISON</p>
+          </div>
+          <div class="evolucion">
+            <p class="etiqueta">Evoluciona de:</p>
+            <p class="nombre-evolucion">kakuna</p>
+          </div>
+        </article>
+
+        <article>
+          <div class="imagen-contenedor">
+            <div class="pokemon-id">ID / 16</div>
+            <img src="16.png" alt="Pidgey" />
+          </div>
+          <div class="contenido">
+            <h3>Pidgey</h3>
+            <p>NORMAL</p>
+            <p>FLYING</p>
+          </div>
+        </article>
+
+        <article>
+          <div class="imagen-contenedor">
+            <div class="pokemon-id">ID / 17</div>
+            <img src="17.png" alt="Pidgeotto" />
+          </div>
+          <div class="contenido">
+            <h3>Pidgeotto</h3>
+            <p>NORMAL</p>
+            <p>FLYING</p>
+          </div>
+          <div class="evolucion">
+            <p class="etiqueta">Evoluciona de:</p>
+            <p class="nombre-evolucion">pidgey</p>
+          </div>
+        </article>
+
+        <article>
+          <div class="imagen-contenedor">
+            <div class="pokemon-id">ID / 18</div>
+            <img src="18.png" alt="Pidgeot" />
+          </div>
+          <div class="contenido">
+            <h3>Pidgeot</h3>
+            <p>NORMAL</p>
+            <p>FLYING</p>
+          </div>
+          <div class="evolucion">
+            <p class="etiqueta">Evoluciona de:</p>
+            <p class="nombre-evolucion">pidgeotto</p>
+          </div>
+        </article>
+
+        <article>
+          <div class="imagen-contenedor">
+            <div class="pokemon-id">ID / 19</div>
+            <img src="19.png" alt="Rattata" />
+          </div>
+          <div class="contenido">
+            <h3>Rattata</h3>
+            <p>NORMAL</p>
+          </div>
+        </article>
+
+        <article>
+          <div class="imagen-contenedor">
+            <div class="pokemon-id">ID / 20</div>
+            <img src="20.png" alt="Raticate" />
+          </div>
+          <div class="contenido">
+            <h3>Raticate</h3>
+            <p>NORMAL</p>
+          </div>
+          <div class="evolucion">
+            <p class="etiqueta">Evoluciona de:</p>
+            <p class="nombre-evolucion">rattata</p>
+          </div>
+        </article>
+      </div>
+    </div>
+
+    <div class="triangulo-derecho"></div>
+    <div class="triangulo-izquierdo"></div>
+    <div class="circulo-derecho"></div>
+    <div class="circulo-izquierdo"></div>
+  </body>
+</html>
