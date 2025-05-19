@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="Iniciar">Iniciar</button>
+    <button id="Detener">Detener</button>
+    <p id="respuesta"></p>
+
+     <script>
+        let contador = 0;
+        let intervalo = null;
+
+                document.getElementById("Iniciar").addEventListener("click", function () {
+            if (intervalo === null) {
+                intervalo = setInterval(() => {
+                    contador++;
+                    document.getElementById("respuesta").textContent = contador;
+                }, 1000);
+            }
+        });
+
+        document.getElementById("Detener").addEventListener("click", function () {
+            clearInterval(intervalo);
+            intervalo = null;
+        });
+
+     </script>
+</body>
+</html>

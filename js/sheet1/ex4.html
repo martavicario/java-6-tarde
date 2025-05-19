@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Condicionales</title>
+</head>
+<body>
+    <script>
+        const num1 = 0, num2 = 32, num3 = -42;
+        const numeros = [num1, num2, num3];
+        let i = 0;
+
+        do {
+            let num = numeros[i]; 
+            if (num > 0) {
+                console.log(`El número ${num} es positivo`);
+            } else if (num < 0) {
+                console.log(`El número ${num} es negativo`);
+            } else {
+                console.log(`El número ${num} es cero`);
+            }
+
+            i++;
+        } while (i < numeros.length);
+    </script>
+</body>
+</html>

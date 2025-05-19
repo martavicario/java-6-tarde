@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function invertirCadena(cadena) {
+            return cadena.split("").reverse().join("");
+        }
+        console.log(invertirCadena("Hola Mundo"));
+
+        function contarVocales(texto) {
+            const vocales = "aeiou";
+            let contador = 0;
+            for (let i = 0; i < texto.length; i++) {
+                if (vocales.includes(texto[i])) {
+                    contador++;
+                }
+            }
+            return contador;
+        }
+        console.log(contarVocales("Hola Mundo"));
+    </script>
+</body>
+</html>

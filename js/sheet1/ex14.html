@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="number" id="numero" placeholder>
+    <button>Adivinar</button>
+    <p id="respuesta"></p>
+
+     <script>
+    const numeros = [...Array(100).keys()].map(n => n + 1); // Del 1 al 100
+    function numeroAleatorio(array) {
+      const indiceAleatorio = Math.floor(Math.random() * array.length);
+      return array[indiceAleatorio];
+    }
+
+    const numeroSecreto = numeroAleatorio(numeros);
+
+    document.querySelector("button").addEventListener("click", function () {
+      const intento = parseInt(document.getElementById("numero").value);
+      const respuesta = document.getElementById("respuesta");
+
+      if (intento < numeroSecreto) {
+        respuesta.textContent = "El número es mayor";
+        respuesta.style.color = "red";
+      } else if (intento > numeroSecreto) {
+        respuesta.textContent = "El número es menor";
+        respuesta.style.color = "red";
+      } else {
+        respuesta.textContent = "¡Correcto!";
+        respuesta.style.color = "green";
+      }
+    });
+  </script>
+</body>
+</html>
