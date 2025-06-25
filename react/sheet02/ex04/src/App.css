@@ -1,0 +1,33 @@
+.contenedor {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.luz {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: gray;
+  margin: 10px 0;
+  transition: background-color 0.3s ease;
+}
+
+.rojo.activo {
+  background-color: red;
+}
+
+.amarillo.activo {
+  background-color: yellow;
+}
+
+.verde.activo {
+  background-color: green;
+}
+
+button {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+}

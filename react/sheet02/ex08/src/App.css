@@ -1,0 +1,16 @@
+body.claro {
+  background-color: white;
+  color: black;
+  transition: 0.3s ease;
+}
+
+body.oscuro {
+  background-color: #121212;
+  color: white;
+  transition: 0.3s ease;
+}
+
+button {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+}
